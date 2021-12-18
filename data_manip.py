@@ -1,26 +1,29 @@
 """
+Saini Ye -- Dec 17, 2021
+
 Code Reference: 
 https://towardsdatascience.com/understanding-audio-data-fourier-transform-fft-spectrogram-and-speech-recognition-a4072d228520
 
 https://stackoverflow.com/questions/23377665/python-scipy-fft-wav-files
 
-
 """
 
 from os import path
+from math import *
 from scipy.fftpack import fft
 from pydub import AudioSegment
 from librosa import display
 from scipy.io import wavfile as wav # get the api
 
 import librosa
+
 import scipy
 import numpy as np
 import matplotlib.pyplot as plt
 
 """ ---------------- convert from .mp3 to .wav ----------------"""
 # files                                                                         
-src = input("Enter the mp3 file with the .mpa extension:")
+src = input("Enter the mp3 file with the .mp3 extension >> ")
 dst = src[0:-3] + "wav"
 
 # convert wav to mp3                                                            
@@ -43,11 +46,11 @@ print("duration: %02d:%02d" % (minutes, seconds))
 
 
 """ ------------------- plot time & frequency graph ------------------- """
-'''
+
 plt.figure()
 
 # mpl.rcParams['agg.path.chunksize'] = 100000
-fs_rate, signal = wav.read("photograph.wav")
+fs_rate, signal = wav.read(dst)
 
 chan = len(signal.shape)
 if chan == 2:
@@ -57,15 +60,19 @@ time_step = 1.0/fs_rate #sampling interval in time
 t = np.arange(0, duration, time_step) # time vector as scipy arange field / numpy.ndarray
 
 FFT = abs(fft(signal))
+FFT = 20 * (np.log(FFT))
 FFT_side = FFT[range(len(samples)//2)]
+FFT_side = 20 * (np.log(FFT_side))
 
 # complete fft spectrum
 freqs = scipy.fftpack.fftfreq(signal.size, t[1]-t[0])
+freqs = np.log(freqs)
 # scipy.fftpack.fftfreq returns the discrete FT sample frequencies
 fft_freqs = np.array(freqs)
 
 #one side (positive) fft spectrum
 freqs_side = freqs[range(len(samples)//2)]
+freqs_side = np.log(freqs_side)
 fft_freqs_side = np.array(freqs_side)
 
 plt.subplot(2, 2, 1)
@@ -77,14 +84,14 @@ plt.ylabel("Amplitude")
 plt.subplot(2, 2, 2)
 p2 = plt.plot(freqs, FFT, "salmon") # plotting the complete fft spectrum
 plt.title("Complete fft Spectrum")
-plt.xlabel('Frequency (Hz)')
-plt.ylabel('Count dbl-sided')
+plt.xlabel('Frequency (Hz) in Log Scale')
+plt.ylabel('Magnitude (dB)')
 
 plt.subplot(2, 2, 3)
 p3 = plt.plot(freqs_side, abs(FFT_side), "b") # plotting the positive fft spectrum
 plt.title("Positive fft Spectrum")
-plt.xlabel('Frequency (Hz)')
-plt.ylabel('Count single-sided')
+plt.xlabel('Frequency (Hz) in Log Scale')
+plt.ylabel('Magnitude(dB)')
 
 plt.subplot(2, 2, 4)
 p4 = plt.specgram(samples, sampling_rate)
@@ -96,7 +103,7 @@ plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
 
 plt.show()
 
-'''
+
 
 
 # # Comments: 

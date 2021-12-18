@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # =================================
-# Sound viewer
+# Music Visualizer
 # ------------
 # Reference to -> [May 2020] - Mina PECHEUX
 #
