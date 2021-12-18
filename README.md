@@ -11,7 +11,7 @@ A great appreciation to Mina Pecheux, I mainly use her code in the animation por
 Original Thoughts...
 My initial intention was to create a visualizer that can help people with hearing disabilities "hear" the music in another visualization format. Therefore, I was thinking about making patterns based on the lyrics. However, I found that to be too difficult to achieve at my current level because the design and the programming would need many resources. Additionally, that might shift the core part of the project since the emphasis will be on signals and systems. 
 
-I have currently provided code that will convert the .mp3 file into a .wav file that can be used to perform frequency analysis and draw plots based on the Fast Fourier Transform (FFT). FFT applies to discrete time signal (the input) and convert it into its frequency constituents, which is perfectly for audio transmission as the amplitudes of the samples are finite. 
+I have currently provided code that will convert the .mp3 file into a .wav file that can perform frequency analysis and draw plots based on the Fast Fourier Transform (FFT). FFT applies to a discrete-time signal (the input) and converts it into its frequency constituents, perfect for audio transmission as the count of the amplitudes for the signal is finite. 
 
 Future Implementation Idea:
 1. Alternation through various colors through the visualizer based on the frequency instead of just one arbitrary color selection
