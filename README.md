@@ -17,24 +17,20 @@ Future Implementation Idea:
 1. Various colors through the waveform instead of just one selection
 2. (A far stretch goal)Combine with other APIs (hope there would be one) that can show related patterns based on the lyris
 
-=================================
+
 Music Visualizer
 ------------
 Saini Ye & E314 [December 2021]
 
 Credit to:
-
 Mina PECHEUX
 Based on the work by Yu-Jie Lin
 (Public Domain)
 Github: https://gist.github.com/manugarri/1c0fcfe9619b775bb82de0790ccb88da
-=================================
 
 LICENSE: CC0 (Public Domain) - see the file in the archive for more info
---------
 
 DISCLAIMERS:
-------------
   - all bash scripts use ffmpeg, so you need to install it first if
     you don't have it yet (https://ffmpeg.org/)
   - for now, the project only works with .wav and .mp4 files
