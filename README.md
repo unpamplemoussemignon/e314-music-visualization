@@ -3,7 +3,9 @@ Fall 2021 ECEN 314 Honors Project
 
 Howdy! Welcome to my Music Visualization Project! Here is the story ... 
 
-Checkout the demo video here: https://youtu.be/O8_USCbpqz8
+Checkout the demo video here: https://youtu.be/O8_USCbpqz8 (Photograph - Ed Sheeran)
+
+Other sample of waveform: https://youtu.be/eqVqffqsoaU (我还年轻 我还年轻 - 老王乐队)
 
 The instruction of how to use these codes is listed in the how_to_use.txt and is also down at the bottom
 A great appreciation to Mina Pecheux, I mainly use her code in the animation portion.
